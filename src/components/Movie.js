@@ -1,12 +1,12 @@
 
-function Movie({movie}) {
+function Movie(props) {
         return(
             <>
-            {movie.map((item,index) => {
+            {props.movies.map((movie,index) => {
                 return (
                     <>
-                <li className="movie" id="movie" key={index} onClick = {seeDetails(item)} >{item.title}</li>
-                <seeDetails/>
+                <li className="movie" id="movie" key={index} onClick = {props.OpenModal(props.ativar)} >{movie.title}</li>
+                <seeDetails movie={movie} ativar = {props.ativar} />
                     </>
                 // <li key = {index}> {item.results[0].title} </li>
                 )
@@ -16,10 +16,11 @@ function Movie({movie}) {
         )
     }
 
-    function seeDetails(item){
-        console.log("Detalhes: " + item.title);
+    function seeDetails(props){
+        console.log("Detalhes: " + props.title);
         return(
-            
+            <>
+            </>
         )
       }
 
